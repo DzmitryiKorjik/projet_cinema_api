@@ -6,15 +6,11 @@ CUR_DIR = os.path.dirname(__file__)
 DATA_FILE = os.path.join(CUR_DIR, 'data', 'movies.json')
 
 def get_movies():
-
     if os.path.exists(DATA_FILE):
         with open(DATA_FILE, 'r', encoding="utf-8") as f:
             movies_title = json.load(f)
         movies = [Movie(title) for title in movies_title]
         return movies
-
-
-
 
 class Movie:
     def __init__(self, title):
